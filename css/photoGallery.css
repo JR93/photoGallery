@@ -1,0 +1,168 @@
+@charset "utf-8";
+/*样式重置*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
+	margin:0;
+	padding:0;
+}
+table{
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img{
+	border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var{
+	font-style:normal;
+	font-weight: normal;
+}
+ol,ul{
+	list-style:none;
+}
+caption,th{
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6{
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,q:after{
+	content:;
+}
+abbr,acronym{
+	border:0;
+}
+body{
+	font:12px/1.5 '微软雅黑',tahoma,arial,'Hiragino Sans GB',宋体,sans-serif;
+}
+.clearfix:after{
+	visibility:hidden;
+	display: block;
+	font-size:0;
+	content:'';
+	clear:both;
+	height:0;
+}
+.clearfix{zoom:1;}
+.text-ellipsis{
+	white-space: nowrap;/*设置不折行*/
+	text-overflow:ellipsis;/*这就是省略号咯*/
+	-o-text-overflow:ellipsis;/*兼容opera*/
+	overflow:hidden;/*设置超过的隐藏*/
+}
+
+/*图片画廊样式*/
+h1{
+	text-align: center;
+	font-size:30px;
+	margin-left: 40px;
+}
+#photoGallery-container{
+	width: 65%;
+	margin: 10px auto;
+	text-align: center;
+}
+.photoGallery{
+	width:200px;
+	height:200px;
+	-webkit-transition:all 0.5s;
+	cursor:pointer;
+}
+.photoGallery:hover{
+	-webkit-transform:scale(1.1);
+	box-shadow:0 0 2px 2px #ddd;
+	z-index: 3;
+}
+#photoGallery-mask{
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.7;
+	fliter:alpha(opacity=70);
+	z-index: 9998;
+	position: fixed;
+	top:0;
+	left:0;
+	background: url(../img/opacity.png) repeat left top\9;
+	display: none;
+}
+#photoGallery-mask .photoGallery-btn{
+	width: 10%;
+	height: 100%;
+	position: absolute;
+	top:0;
+}
+#photoGallery-mask .photoGallery-prev-btn{
+	left:0;
+}
+#photoGallery-mask .photoGallery-next-btn{
+	right:0;
+}
+#photoGallery-mask .photoGallery-prev-btn-show{
+	background:url(../img/prev.png) no-repeat left center;
+	cursor:pointer;
+}
+#photoGallery-mask .photoGallery-next-btn-show{
+	background:url(../img/next.png) no-repeat right center;
+	cursor:pointer;
+}
+#photoGallery-picWrapper{
+	width: 800px;
+	height: 500px;
+	background:#fff url(../img/loading.gif) no-repeat center center;
+	border:5px solid #fff;
+	border-radius: 5px;
+	position: fixed;
+	top:50%;
+	left:50%;
+	margin-left: -400px;
+	margin-top:-250px;
+	color:#fff;
+	text-align: center;
+	font-size: 16px;
+	z-index: 9999;
+	display: none;
+}
+#photoGallery-picWrapper .photoGallery-close-btn{
+	width: 27px;
+	height:27px;
+	background: url(../img/close.png) no-repeat center center;
+	position: absolute;
+	right: 5px;
+	top:5px;
+	z-index: 3;
+	cursor: pointer;
+}
+#photoGallery-picWrapper .photoGallery-picCon{
+	width:100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 1;
+}
+#photoGallery-picWrapper .photoGallery-picIndex{
+	display: block;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background: rgba(0,0,0,0.2);
+	position: absolute;
+	top:0;
+	left:0;
+	background: url(../img/opacity.png) repeat left top\9;
+	z-index: 2;
+}
+#photoGallery-picWrapper .photoGallery-picDesc{
+	display: block;
+	width: 100%;
+	height: 60px;
+	line-height: 40px;
+	background: rgba(0,0,0,0.3);
+	position: absolute;
+	bottom:0;
+	left:0;
+	background: url(../img/opacity.png) repeat left top\9;
+	text-align: left;
+	text-indent: 25px;
+	z-index: 2;
+}
